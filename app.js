@@ -35,7 +35,11 @@ function formatAndSendTweet(event) {
     // const imageUrl = _.get(event, ['asset', 'image_url']);
     // return tweet.tweetWithImage(tweetText, imageUrl);
 
-    return tweet.tweet(tweetText);
+    // Original
+    // return tweet.tweet(tweetText);
+
+    const imageUrl = _.get(event, ['asset', 'image_url']);
+    return tweet.tweetWithImage(tweetText, imageUrl);
 }
 
 // Poll OpenSea every 60 seconds & retrieve all sales for a given collection in either the time since the last sale OR in the last minute
